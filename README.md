@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Photo Gallery</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #111;
+}
+
+/* Gallery container */
+.gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Photo size 8x11 inches (portrait ratio) */
+.photo {
+    flex: 0 0 auto;
+    width: 300px;      /* Scaled for screen */
+    height: 412px;     /* 8x11 ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Smartphone Interface */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .photo {
+        width: 100%;
+        max-width: 350px;
+        height: 480px;
+        margin: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="gallery">
+    <div class="photo"><img src="PHOTO 1.jpg" alt="Photo 1"></div>
+    <div class="photo"><img src="PHOTO 2.jpg" alt="Photo 2"></div>
+    <div class="photo"><img src="PHOTO 3.jpg" alt="Photo 3"></div>
+    <div class="photo"><img src="PHOTO 4.jpg" alt="Photo 4"></div>
+    <div class="photo"><img src="PHOTO 5.jpg" alt="Photo 5"></div>
+    <div class="photo"><img src="PHOTO 6.jpg" alt="Photo 6"></div>
+    <div class="photo"><img src="PHOTO 7.jpg" alt="Photo 7"></div>
+</div>
+
+</body>
+</html>
